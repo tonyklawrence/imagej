@@ -8,16 +8,16 @@ function draw(segments) {
 roiManager("reset");
 
 getSelectionCoordinates(x, y);
-xinc = lengthOf(x) / segments;
-yinc = lengthOf(y) / segments;
+segmentWidth = lengthOf(x) / segments;
+segmentHeight = lengthOf(y) / segments;
 
 for (i = 0; i <= segments; i++) {
-    xposition = startOf(x) + xinc * i;
-    yposition = startOf(y) + yinc * i;
-    
+    xposition = startOf(x) + segmentWidth * i;
+    yposition = startOf(y) + segmentHeight * i;
+
     makeLine(xposition - width, yposition, xposition + width, yposition);
 
-    Roi.setName(100 / segments * i + "%");
+    Roi.setName(asPercent(100 / segments * i));
     Roi.setStrokeColor("#cccccc");
     roiManager("Add");
 }
@@ -25,5 +25,6 @@ for (i = 0; i <= segments; i++) {
 function startOf(line) { return line[1]; }
 function endOf(line) { return line[0]; }
 function lengthOf(line) { return line[0] - line[1]; }
+function asPercent(value) { return "" + value + "%"; }
 
 }
