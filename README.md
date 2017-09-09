@@ -5,7 +5,7 @@
 	1. Download and extract the files from this repository.
 	2. Open ImageJ
 	3. From the menu select Plugins -> Macros -> Install
-	4. Open the macro file you wish to use
+	4. Open the macro file you wish to install
 
 ## How to use
 
