@@ -1,1 +1,1 @@
-# imagej
+# ImageJ
