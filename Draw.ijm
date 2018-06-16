@@ -17,9 +17,16 @@ for (i = 0; i <= segments; i++) {
 
     makeLine(xposition - width, yposition, xposition + width, yposition);
 
-    Roi.setName(asPercent(100 / segments * i));
+    Roi.setName("At " + asPercent(100 / segments * i));
     Roi.setStrokeColor("#cccccc");
     roiManager("Add");
+
+    if (i != segments) {
+        makeLine(xposition, yposition, xposition, yposition + segmentHeight);
+        Roi.setName("Measurement is " + abs(segmentHeight));
+        Roi.setStrokeColor("#eeeeee");
+        roiManager("Add");
+    }
 }
 
 function startOf(line) { return line[1]; }
